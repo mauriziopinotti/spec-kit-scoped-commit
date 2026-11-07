@@ -1,0 +1,33 @@
+schema_version: "1.0"
+
+extension:
+  id: "scoped"
+  name: "Scoped Commit"
+  version: "0.1.0"
+  description: "Commit only chat-relevant Git changes, preserving unrelated work, and optionally close the active feature."
+  author: "Maurizio Pinotti"
+  license: "MIT"
+  category: "process"
+  effect: "read-write"
+
+requires:
+  speckit_version: ">=1.3.1"
+  tools:
+    - name: "git"
+      required: true
+    - name: "python3"
+      required: true
+      version: ">=3.11"
+
+provides:
+  commands:
+    - name: "speckit.scoped.commit"
+      file: "commands/commit.md"
+      description: "Preview and commit only current-conversation changes; optionally close completed active feature."
+
+tags:
+  - "git"
+  - "commit"
+  - "workflow"
+  - "isolation"
+  - "process"
